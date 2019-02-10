@@ -12,7 +12,7 @@
     border: 5px solid red;
     background-color: yellow;
 }
-    </style>
+ </style>
 <?php
 /**
 * Plugin Name: Database 2
@@ -37,7 +37,6 @@
  * This info should be available from within your hosting panel.
  */
  
-
 add_action("the_content", "html_form_code");
 
   function html_form_code() {
@@ -52,7 +51,6 @@ add_action("the_content", "html_form_code");
     $sql = "INSERT INTO Statutquiz (username, inputType) VALUES (:username, :inputType)";
     
     $stmt = $pdo->prepare($sql);
-  
     $stmt->bindValue(':username', $username);
     $stmt->bindValue(':inputType', $inputType);
      
@@ -64,18 +62,15 @@ add_action("the_content", "html_form_code");
     }
    
     if($result){
-      
         echo 'Merci de votre participation !';
     }
- 
 }
 
 $stmt = $pdo->query("SELECT question1 FROM `qu1` ");
 while ($row = $stmt->fetch()){ 
        $sel = $row['question1']; 
         echo $sel . "\n" . "<br>";
-    
-	}
+  }
 	
 $stmt = $pdo->query("SELECT images FROM `qu1`");
 while ($row = $stmt->fetch()){ 
@@ -94,13 +89,11 @@ while ($row = $stmt->fetch()){
 	echo '</p>';
 	echo '<input type="text" name="inputType" id="inputType">';
 	echo '<br>';
-	
 	echo'<input type="submit" name="Quest3" value="Envoyer"></input>';
 	echo'<input type="reset" value="Effacer">';
-	  echo '</form>';
+    echo '</form>';
 
 	  $inputType = "";
-	  
 
 	if ($inputType == 'Paris'){
 		echo 'Mauvaise réponse';
@@ -124,10 +117,8 @@ while ($row = $stmt->fetch()){
 		} else {
 			echo 'Mauvaise réponse !';
 		}
-		
 		 echo '<hr><br>';
 		 echo "Question 1";
-
 }
 
 function upl_css() {
@@ -152,9 +143,6 @@ function upl_css() {
 }
 
 add_action( 'admin_head', 'upl_css' );
-
-
-
 ?>
 
 

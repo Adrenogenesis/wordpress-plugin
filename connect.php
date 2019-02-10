@@ -1,9 +1,9 @@
 <?php
 //Our MySQL user account.
-define('MYSQL_USER', 'root');
+define('MYSQL_USER', '');
  
 //Our MySQL password.
-define('MYSQL_PASSWORD', 'warlock');
+define('MYSQL_PASSWORD', '');
  
 //The server that MySQL is located on.
 define('MYSQL_HOST', 'localhost');
